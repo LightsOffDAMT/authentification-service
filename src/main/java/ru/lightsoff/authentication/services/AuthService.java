@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import ru.lightsoff.authentication.DTO.LoginRequest;
 import ru.lightsoff.authentication.DTO.RegisterRequest;
 import ru.lightsoff.authentication.Entities.User;
-import ru.lightsoff.authentication.UserRepository;
+import ru.lightsoff.authentication.configuration.UserRepository;
 
 import javax.naming.AuthenticationException;
 import java.util.Calendar;

@@ -1,10 +1,12 @@
 package ru.lightsoff.authentication.Entities;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 /**
  * User entity
  */
+@Table("users")
 public class User {
     @Id
     private Long id;

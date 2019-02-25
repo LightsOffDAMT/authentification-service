@@ -13,6 +13,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
 
+@EnableJdbcRepositories
 @Configuration
 public class DbConfig {
     @Value("${spring.datasource.password}")

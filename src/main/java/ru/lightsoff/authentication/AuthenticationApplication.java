@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import ru.lightsoff.authentication.Entities.User;
+import ru.lightsoff.authentication.configuration.UserRepository;
 
 @SpringBootApplication
 public class AuthenticationApplication {
