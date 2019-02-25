@@ -36,7 +36,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    ResponseEntity<String> login(@RequestBody RegisterRequest req) throws AuthenticationException {
+    ResponseEntity<String> register(@RequestBody RegisterRequest req) throws AuthenticationException {
         String token = authService.register(req);
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("token", token);
