@@ -1,0 +1,14 @@
+secretKey: secret123
+spring:
+  profiles: Danya
+  datasource:
+    password: xna004
+---
+spring:
+  profiles: Drew
+  datasource:
+    password: kkh753
+---
+spring:
+  profiles:
+    active: Danya
