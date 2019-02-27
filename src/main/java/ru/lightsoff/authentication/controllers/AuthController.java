@@ -30,8 +30,8 @@ public class AuthController {
             return new ResponseEntity<>(responseHeaders, HttpStatus.OK);
     }
 
-    @GetMapping("/validateToken")
-    void validateToken(@RequestParam("token") String token) throws AuthenticationException {
+    @PostMapping("/validateToken")
+    void validateToken(@RequestBody String token) throws AuthenticationException {
         authService.validateToken(token);
     }
 

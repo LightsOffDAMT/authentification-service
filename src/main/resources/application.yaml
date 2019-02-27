@@ -1,8 +1,11 @@
+
 secretKey: secret123
 spring:
   profiles: Danya
   datasource:
     password: xna004
+server:
+  port: 8001
 ---
 spring:
   profiles: Drew

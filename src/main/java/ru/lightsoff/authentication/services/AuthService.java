@@ -29,9 +29,9 @@ public class AuthService {
     String secretKey;
 
     public String login(LoginRequest req) throws AuthenticationException {
-        User user = users.findByUsername(req.getLogin());
+        User user = users.findByUsername(req.getUsername());
         if (user != null) {
-            if (passwordEncoder.matches(user.getPassword(), req.getPassword())) {
+            if (passwordEncoder.matches(req.getPassword(), user.getPassword() )) {
                 return createToken(user);
             }
         }
@@ -49,8 +49,12 @@ public class AuthService {
         } catch (Exception e) {
             throw new AuthenticationException("Token corrupted");
         }
-        if (claims.getExpiration().after(new Date())) {
-            return;
+        try {
+            if (claims.getExpiration().after(new Date())) {
+                return;
+            }
+        } catch (Exception e){
+            e.printStackTrace();
         }
 
         throw new AuthenticationException("Token expired");
@@ -77,9 +81,9 @@ public class AuthService {
 
         JwtBuilder jwtBuilder = Jwts.builder();
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.HOUR, 1);
-        jwtBuilder.setExpiration(calendar.getTime());
+        calendar.add(Calendar.YEAR, 1);
         jwtBuilder.setClaims(tokenData);
+        jwtBuilder.setExpiration(calendar.getTime());
 
         return jwtBuilder.signWith(SignatureAlgorithm.HS512, secretKey).compact();
     }
