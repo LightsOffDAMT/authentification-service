@@ -50,5 +50,10 @@ public class User {
         return this;
     }
 
+    @Override
+    public String toString() {
+        return String.format("{id = %s, username = %s, email = %s}",
+                this.getId(), this.getUsername(), this.getEmail());
+    }
 }
 

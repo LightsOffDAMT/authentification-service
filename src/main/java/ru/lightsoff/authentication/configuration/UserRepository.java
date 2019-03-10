@@ -11,4 +11,7 @@ import ru.lightsoff.authentication.Entities.User;
 public interface UserRepository extends CrudRepository<User, Long> {
     @Query("select * from users where username like :username;")
     User findByUsername(@Param("username") String username);
+
+    @Query("select * from users where email like :email;")
+    User findByEmail(@Param("email") String email);
 }

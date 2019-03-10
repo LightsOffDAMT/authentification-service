@@ -28,6 +28,4 @@ public class AuthenticationApplication {
                 .withPassword(encoder.encode("123"));
         users.save(user);
     }
-
-
 }

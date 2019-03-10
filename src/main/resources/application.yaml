@@ -1,11 +1,13 @@
-
-secretKey: secret123
+securityServiceUrl: "http://localhost:8002/generateToken"
 spring:
   profiles: Danya
   datasource:
     password: xna004
 server:
   port: 8001
+logging:
+  level:
+    ru.lightsoff.authentication: DEBUG
 ---
 spring:
   profiles: Drew
